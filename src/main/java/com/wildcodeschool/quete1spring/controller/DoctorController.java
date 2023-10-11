@@ -9,9 +9,10 @@ Lo mejor es evitar la mayor cantidad de lógica en esta parte y ponerla en el mo
 public class DoctorController {
 
     @GetMapping("/doctor/1") /*para la anotación todas las peticiones van a ser rerouteradas hacia este método y así se ejecutarán. Entre paréntesis va un string con la ruta*/
-    @ResponseBody /*esta anotación indica que el cliente recibirá directamente el cuerpo y no la vista*/
-    public String index() {
-        return "William Hartnell";
+    @ResponseBody /*esta anotación indica que el cliente recibirá un contenido y no la página web*/
+    public String index() { /* parece que esta función carga el html que hay en static, pero no estoy muy seguro*/
+        return "William Hartnell"; /*si lanzamos el servidor, se mostrará la página web index que hay en static.
+         Para mostrar este responeBody, hay que añadir la ruta de getmapping, o como en este caso, crear los enlace en index*/
     }
     @GetMapping("/doctor/10")
     @ResponseBody
